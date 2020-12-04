@@ -636,4 +636,284 @@ describe('methods ', () => {
         expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
       })
   });
-});
+
+  describe('must not have unbound "this" on ', () => {
+    describe('deals methods ', () => {
+      test('getDeals', async () => {
+        const expectedMethodType = 'GET';
+        await Promise.resolve(testParam)
+          .then(api.getDeals);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('dealUpdateMaxSafetyOrders', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.dealUpdateMaxSafetyOrders);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('dealPanicSell', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.dealPanicSell);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('dealPanicSell', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.dealPanicSell);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('dealCancel', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.dealCancel);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('dealUpdateTp', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.dealUpdateTp);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('getDeal', async () => {
+        const expectedMethodType = 'GET';
+        await Promise.resolve(testParam)
+          .then(api.getDeal);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('getDealSafetyOrders', async () => {
+        const expectedMethodType = 'GET';
+        await Promise.resolve(testParam)
+          .then(api.getDealSafetyOrders);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('dealAddFunds', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.dealAddFunds);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+    })
+
+    describe('bots methods ', () => {
+      test('getBotsBlackList', async () => {
+        const expectedMethodType = 'GET';
+        await Promise.resolve(testParam)
+          .then(api.getBotsBlackList);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('botsUpdateBlackList', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.botsUpdateBlackList);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('botCreate', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.botCreate);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('getBots', async () => {
+        const expectedMethodType = 'GET';
+        await Promise.resolve(testParam)
+          .then(api.getBots);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('getBotsStats', async () => {
+        const expectedMethodType = 'GET';
+        await Promise.resolve(testParam)
+          .then(api.getBotsStats);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('botUpdate', async () => {
+        const expectedMethodType = 'PATCH';
+        await Promise.resolve(testParam)
+          .then(api.botUpdate);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('botDisable', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.botDisable);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('botEnable', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.botEnable);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('botStartNewDeal', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.botStartNewDeal);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('botDelete', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.botDelete);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('botPaniceSellAllDeals', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.botPaniceSellAllDeals);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('botCancelAllDeals', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.botCancelAllDeals);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('botShow', async () => {
+        const expectedMethodType = 'GET';
+        await Promise.resolve(testParam)
+          .then(api.botShow);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+    })
+
+    describe('smarttrade methods ', () => {
+      test('smartTradesCreateSimpleSell', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.smartTradesCreateSimpleSell);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('smartTradesCreateSimpleBuy', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.smartTradesCreateSimpleBuy);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('smartTradesCreateSmartSell', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.smartTradesCreateSmartSell);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('smartTradesCreateSmartCover', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.smartTradesCreateSmartCover);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('smartTradesCreateSmartTrade', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.smartTradesCreateSmartTrade);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('smartTrades', async () => {
+        const expectedMethodType = 'GET';
+        await Promise.resolve(testParam)
+          .then(api.smartTrades);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('smartTradesV2', async () => {
+        const expectedMethodType = 'GET';
+        await Promise.resolve(testParam)
+          .then(api.smartTradesV2);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('smartTradesStepPanicSell', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.smartTradesStepPanicSell);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('smartTradesUpdate', async () => {
+        const expectedMethodType = 'PATCH';
+        await Promise.resolve(testParam)
+          .then(api.smartTradesUpdate);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('smartTradesCancel', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.smartTradesCancel);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('smartTradesPanicSell', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.smartTradesPanicSell);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+      test('smartTradesForceProcess', async () => {
+        const expectedMethodType = 'POST';
+        await Promise.resolve(testParam)
+          .then(api.smartTradesForceProcess);
+
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+    })
+  })
+})
