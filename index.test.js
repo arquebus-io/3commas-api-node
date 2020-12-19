@@ -326,6 +326,164 @@ describe('methods ', () => {
     })
   });
 
+  describe('for grid bots ', () => {
+    test('createAIGridBot must make a POST request to /grid_bots/ai', async () => {
+      const expectedMethodType = 'POST';
+      const botUrl = `${API_URL}/public/api/ver1/grid_bots/ai?`;
+      const expectedUrl = generateExpectedUrl(botUrl, testParam);
+
+      await api.createAIGridBot(testParam);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('createGridBot must make a POST request to /grid_bots/manual', async () => {
+      const expectedMethodType = 'POST';
+      const botUrl = `${API_URL}/public/api/ver1/grid_bots/manual?`;
+      const expectedUrl = generateExpectedUrl(botUrl, testParam);
+
+      await api.createGridBot(testParam);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('getAIGridBotSettings must make a GET request to /grid_bots/ai_settings', async () => {
+      const expectedMethodType = 'GET'
+      const botUrl = `${API_URL}/public/api/ver1/grid_bots/ai_settings?`;
+      const expectedUrl = generateExpectedUrl(botUrl, testParam);
+
+      await api.getAIGridBotsSettings(testParam);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('getGridBots must make a GET request to /grid_bots', async () => {
+      const expectedMethodType = 'GET'
+      const botUrl = `${API_URL}/public/api/ver1/grid_bots?`;
+      const expectedUrl = generateExpectedUrl(botUrl, testParam);
+
+      await api.getGridBots(testParam);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('getGridBotMarketOrders must make a GET request to /grid_bots/{id}/market_orders', async () => {
+      const expectedMethodType = 'GET'
+      const grid_bot_id = 26;
+      const botUrl = `${API_URL}/public/api/ver1/grid_bots/${grid_bot_id}/market_orders?`;
+      const expectedUrl = generateExpectedUrl(botUrl, { grid_bot_id });
+
+      await api.getGridBotMarketOrders(grid_bot_id);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('getGridBotProfits must make a GET request to /grid_bots/{id}/profits', async () => {
+      const expectedMethodType = 'GET'
+      const grid_bot_id = 26;
+      const botUrl = `${API_URL}/public/api/ver1/grid_bots/${grid_bot_id}/profits?`;
+      const expectedUrl = generateExpectedUrl(botUrl, { grid_bot_id });
+
+      await api.getGridBotProfits(grid_bot_id);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('editAIGridBot must make a PATCH request to /grid_bots/{id}/ai', async () => {
+      const expectedMethodType = 'PATCH'
+      const grid_bot_settings = {
+        id: 26
+      }
+      const botUrl = `${API_URL}/public/api/ver1/grid_bots/${grid_bot_settings.id}/ai?`;
+      const expectedUrl = generateExpectedUrl(botUrl, grid_bot_settings);
+
+      await api.editAIGridBot(grid_bot_settings);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('editGridBot must make a PATCH request to /grid_bots/{id}/manual', async () => {
+      const expectedMethodType = 'PATCH'
+      const grid_bot_settings = {
+        id: 26
+      }
+      const botUrl = `${API_URL}/public/api/ver1/grid_bots/${grid_bot_settings.id}/manual?`;
+      const expectedUrl = generateExpectedUrl(botUrl, grid_bot_settings);
+
+      await api.editGridBot(grid_bot_settings);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('gridBotShow must make a GET request to /grid_bots/{id}', async () => {
+      const expectedMethodType = 'GET'
+      const grid_bot_id = 26;
+      const botUrl = `${API_URL}/public/api/ver1/grid_bots/${grid_bot_id}?`;
+      const expectedUrl = generateExpectedUrl(botUrl, { grid_bot_id });
+
+      await api.gridBotShow(grid_bot_id);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('deleteGridBot must make a DELETE request to /grid_bots/{id}', async () => {
+      const expectedMethodType = 'DELETE'
+      const grid_bot_id = 26;
+      const botUrl = `${API_URL}/public/api/ver1/grid_bots/${grid_bot_id}?`;
+      const expectedUrl = generateExpectedUrl(botUrl, { grid_bot_id });
+
+      await api.deleteGridBot(grid_bot_id);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('disableGridBot must make a POST request to /grid_bots/{id}/disable', async () => {
+      const expectedMethodType = 'POST'
+      const grid_bot_id = 26;
+      const botUrl = `${API_URL}/public/api/ver1/grid_bots/${grid_bot_id}/disable?`;
+      const expectedUrl = generateExpectedUrl(botUrl, { grid_bot_id });
+
+      await api.disableGridBot(grid_bot_id);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('enableGridBot must make a POST request to /grid_bots/{id}/enable', async () => {
+      const expectedMethodType = 'POST'
+      const grid_bot_id = 26;
+      const botUrl = `${API_URL}/public/api/ver1/grid_bots/${grid_bot_id}/enable?`;
+      const expectedUrl = generateExpectedUrl(botUrl, { grid_bot_id });
+
+      await api.enableGridBot(grid_bot_id);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('getGridBotRequiredBalances must make a GET request to /grid_bots/{id}/required_balances', async () => {
+      const expectedMethodType = 'GET'
+      const grid_bot_id = 26;
+      const botUrl = `${API_URL}/public/api/ver1/grid_bots/${grid_bot_id}/required_balances?`;
+      const expectedUrl = generateExpectedUrl(botUrl, { grid_bot_id });
+
+      await api.getGridBotRequiredBalances(grid_bot_id);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+  });
+
   describe('for smart trades ', () => {
     test('smartTradesCreateSimpleSell must make a POST request to /smart_trades/create_simple_sell',
       async () => {

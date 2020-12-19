@@ -116,6 +116,48 @@ class threeCommasAPI {
       await this.makeRequest('GET', `/public/api/ver1/bots/${bot_id}/show?`, { bot_id })
 
     /**
+     * Grid methods
+     */
+    this.createAIGridBot = async (params) =>
+      await this.makeRequest('POST', `/public/api/ver1/grid_bots/ai?`, params)
+
+    this.createGridBot = async (params) =>
+      await this.makeRequest('POST', `/public/api/ver1/grid_bots/manual?`, params)
+
+    this.getAIGridBotsSettings = async (params) =>
+      await this.makeRequest('GET', `/public/api/ver1/grid_bots/ai_settings?`, params)
+
+    this.getGridBots = async (params) =>
+      await this.makeRequest('GET', `/public/api/ver1/grid_bots?`, params)
+
+    this.getGridBotMarketOrders = async (grid_bot_id) =>
+      await this.makeRequest('GET', `/public/api/ver1/grid_bots/${grid_bot_id}/market_orders?`, { grid_bot_id })
+
+    this.getGridBotProfits = async (grid_bot_id) =>
+      await this.makeRequest('GET', `/public/api/ver1/grid_bots/${grid_bot_id}/profits?`, { grid_bot_id })
+
+    this.editAIGridBot = async (params) =>
+      await this.makeRequest('PATCH', `/public/api/ver1/grid_bots/${params.id}/ai?`, params)
+
+    this.editGridBot = async (params) =>
+      await this.makeRequest('PATCH', `/public/api/ver1/grid_bots/${params.id}/manual?`, params)
+
+    this.gridBotShow = async (grid_bot_id) =>
+      await this.makeRequest('GET', `/public/api/ver1/grid_bots/${grid_bot_id}?`, { grid_bot_id })
+
+    this.deleteGridBot = async (grid_bot_id) =>
+      await this.makeRequest('DELETE', `/public/api/ver1/grid_bots/${grid_bot_id}?`, { grid_bot_id })
+
+    this.disableGridBot = async (grid_bot_id) =>
+      await this.makeRequest('POST', `/public/api/ver1/grid_bots/${grid_bot_id}/disable?`, { grid_bot_id })
+
+    this.enableGridBot = async (grid_bot_id) =>
+      await this.makeRequest('POST', `/public/api/ver1/grid_bots/${grid_bot_id}/enable?`, { grid_bot_id })
+
+    this.getGridBotRequiredBalances = async (grid_bot_id) =>
+      await this.makeRequest('GET', `/public/api/ver1/grid_bots/${grid_bot_id}/required_balances?`, { grid_bot_id })
+
+    /**
      * Smart Trades methods
      */
 
@@ -154,6 +196,7 @@ class threeCommasAPI {
 
     this.smartTradesForceProcess = async (smart_trade_id) =>
       await this.makeRequest('POST', `/public/api/ver1/smart_trades/${smart_trade_id}/force_process?`, { smart_trade_id })
+
   }
 
   /**
