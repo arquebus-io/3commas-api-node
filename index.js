@@ -128,7 +128,7 @@ class threeCommasAPI {
       await this.makeRequest('GET', `/public/api/ver1/grid_bots/ai_settings?`, params)
 
     this.getGridBots = async (params) =>
-      await this.makeRequest('GET', `/public/api/ver1/grid_bots?`, params)
+      await this.makeRequest('GET', `/public/api/ver1/grid_bots?`, params);
 
     this.getGridBotMarketOrders = async (grid_bot_id) =>
       await this.makeRequest('GET', `/public/api/ver1/grid_bots/${grid_bot_id}/market_orders?`, { grid_bot_id })
